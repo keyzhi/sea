@@ -1,0 +1,67 @@
+<script type="text/javascript" src="../cmd/sea.js" id="seajsnode"></script>
+<script type="text/javascript">
+
+    var version = '20171127';
+    // seajs 的简单配置
+    seajs.config({
+        charset: 'utf-8',
+        debug: false,
+
+        // vars: {
+        //     'app' : '__APP__',
+        //     'public': '__PUBLIC__',
+        //     'module': '__MODULE__',
+        //     'root': '__ROOT__'
+        // },
+
+        base: '../js',
+
+        preload: [
+            Function.prototype.bind ? '' : 'es5-shim',
+            this.JSON ? '' : 'json3',
+            'console'
+        ],
+
+        alias: {
+            //base
+            'json3': 'base/json3',
+            'es5-shim': 'base/es5-shim',
+            //'html5shiv': 'base/html5shiv',
+            //'respond': 'base/respond',
+            //'selectivizr': 'base/selectivizr',
+            'console': 'base/console',
+
+            'angular': 'libs/angular',
+            'avalon': 'libs/avalon',
+            'jquery': 'libs/jquery',
+            'jquery-ui': 'libs/jquery-ui/jquery-ui',
+            'jquery.ui.datepicker-zh-CN': 'libs/jquery-ui/jquery.ui.datepicker-zh-CN',
+            'jquery.transit': 'libs/jquery.transit',
+            'jquery.form':'libs/jquery.form',
+
+
+            'bootstrap': 'libs/bootstrap/bootstrap',
+            'bootstrap-switch': 'libs/bootstrap/bootstrap-switch',
+
+            'layer': 'libs/layer/layer',
+            'msdropdown': 'libs/msdropdown/js/msdropdown/jquery.dd',
+            'highcharts': 'libs/highcharts/highcharts.src',
+            'uploadify': 'libs/uploadify/jquery.uploadify',
+            'chosen': 'libs/chosen/chosen.jquery',
+            'placeholder': 'libs/placeholder',
+            'perfect-scrollbar': 'libs/perfect-scrollbar/js/perfect-scrollbar',
+            'distpicker.data' : 'libs/distpicker.data',
+            'topmMenu':'topmMenu',
+            'moment' : 'libs/moment',
+            
+            'common': 'common',
+            'VMcommon': 'VMcommon'
+            //'global': 'global'
+        },
+
+        // 版本控制
+        map: [
+            [ /^(.*\.(?:css|js))(.*)$/i, '$1?' + version ]
+        ]
+    });
+</script>

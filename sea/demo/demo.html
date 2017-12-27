@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>sea.js demo</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="">
+	<!-- <link rel="stylesheet" href="../js/bootstrap/css/bootstrap-switch.css"> -->
+	<style type="text/css">
+		[ng-cloak]{
+			display: none;
+		}
+	</style>
+</head>
+<body id="demo" ng-controller="demoCtrl" ng-cloak>
+	<h1 id="title" >{{title}}</h1>
+	<!-- <button ng-click="chan()">click</button> -->
+	<button ng-click="jump('/start')">跳转</button>
+
+
+	<div>
+		<!-- <table border='1' width=500>
+			<tr>
+				<td>游戏</td>
+				<td>电影</td>
+
+			</tr>
+			<tr>
+				<td>游戏</td>
+				<td>游戏</td>
+				
+			</tr>
+		</table> -->
+		 <div style="width:400px;min-height:600px;float:left;border:1px solid #000">
+		 	<ul>
+		 		<li><a href="game.html" target="content">游戏</a></li>
+		 		<li><a href="move.html" target="content">电影</a></li>
+		 	</ul>
+		 	<iframe id="iframeID"  border="0" scrolling="auto" frameborder="0" width="100%" name="content">
+
+		 	</iframe>
+		 </div>
+		 <div ng-view style="min-width:1000px;width:400px;min-height:600px;float:right;border:1px solid #000"></div>
+	</div>
+</body>
+<!-- <include file="seajs"/> -->
+<script type="text/javascript" src="../cmd/sea.js"></script>
+<script type="text/javascript">
+
+	seajs.config({
+		alias:{
+			'changeText':'../demojs/changeText.js',
+			'jquery':'../js/jquery/jquery.js',
+			'demo':'../demojs/demo.js',
+			'angular':'../js/angular.js',
+			'angular-route':'../js/angular-route.js',
+			'bootstrap':'../js/bootstrap/js/bootstrap',
+			'bootstrap-switch':'../js/bootstrap/js/bootstrap-switch',
+			'moment':'../js/moment.js'
+		}
+	})
+
+	seajs.use('../demojs/demo.js',function(index){
+		index.init();
+	});
+	// seajs.use(['demo','jquery'],function(demo,$){
+	// 	$('#title').after('<button id="show">showText</button>');
+	// 	$("#show").on('click',function(){
+	// 		demo.showText();
+	// 		// console.log(123);
+	// 	})
+	// })
+
+	// window.onload=function(){
+
+	// 	$("#iframeID").attr('src','start.html')
+	// }
+
+		
+	
+</script>
+</html>
